@@ -455,26 +455,26 @@ public class RedBlackTree{
     }
     
     //case 5
-    if (blackHeight(root, 0) == -1)
+    if (blackHeight(root) == -1)
     {
       return false;
     }
     return true;
   }
 
-  private int blackHeight(Node root, int height)
+  private int blackHeight(Node root)
   {
     if (root == null)
     {
       return 1;
     }
-    int leftTreeHeight = blackHeight(root.left, height);
+    int leftTreeHeight = blackHeight(root.left);
     if (leftTreeHeight == -1)
     {
       return -1;
     }
 
-    int rightTreeHeight = blackHeight(root.right, height);
+    int rightTreeHeight = blackHeight(root.right);
     if (rightTreeHeight == -1)
     {
       return -1;
@@ -486,9 +486,9 @@ public class RedBlackTree{
     }
     if (root.color == BLACK)
     {
-      height++;
+      rightTreeHeight++;
     }
-    return height;
+    return rightTreeHeight;
   }
 
   private boolean blackChildren(Node root)
@@ -520,7 +520,16 @@ public class RedBlackTree{
   
   //This returns the absolute value of the difference between the real height of the tree and its black height. 
   public int trueHeightDiff(){
-	  return 0;
+	  return Math.abs(blackHeight(root) - height(root));
+  }
+  private int height(Node root)
+  {
+    if (root == null)
+    {
+      return -1;
+    }
+    return 1 + Math.max(height(root.left), height(root.right));
+        
   }
 }
 
