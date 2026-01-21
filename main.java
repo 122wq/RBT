@@ -21,6 +21,14 @@ public class main {
 		tree.insert(67);
 		tree.insert(75);
         
+		
+
         tree.printTree();
+		System.out.println(tree.shortestTruePath());
+		System.out.println(tree.trueHeightDiff());
+		// Red node have red children
+		tree.root.left.right.color = false;
+		System.out.println(tree.isRedBlack());
+		tree.root.left.right.color = true;
 	}
 }

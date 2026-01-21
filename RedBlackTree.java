@@ -5,7 +5,7 @@ public class RedBlackTree{
 
   static final boolean RED = false;
   static final boolean BLACK = true;
-  private Node root;
+   Node root;
   private NilNode terminator = new NilNode();
   
   public Node search(int key) {
