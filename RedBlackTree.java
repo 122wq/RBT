@@ -441,6 +441,8 @@ public class RedBlackTree{
   // 5 For each node, all paths from the node to descendant leaves contain the same number of black nodes.
   // To receive full credit you must explicitly check for each property! You may not assume anything based on the above implementation (which does ensure all these rules are followed)
   // you may wish to add some helper functions here.
+  //Precondition: none
+  //Postcondition: returns true or false depending if the tree satisfy red-black principles
   public boolean isRedBlack() {
    
     //root case
@@ -461,7 +463,8 @@ public class RedBlackTree{
     }
     return true;
   }
-
+  //Precondition: none
+  //Postcondition: returns the black height, and returns 1 if root is null as the root is black
   private int blackHeight(Node root)
   {
     if (root == null)
@@ -490,7 +493,8 @@ public class RedBlackTree{
     }
     return rightTreeHeight;
   }
-
+  //precondition: none
+  //Postcondition: return a boolean to show if all red nodes have only black children
   private boolean blackChildren(Node root)
   {
     if (root == null)
@@ -517,6 +521,8 @@ public class RedBlackTree{
   public String shortestTruePath() {
 	  return shortestPath(root);
   }
+  //Precondition: dealing with a red black tree
+  //Postcondition: returns a tree represents the path of the shortest height
   private String shortestPath(Node root)
   {
     if (root == null)
