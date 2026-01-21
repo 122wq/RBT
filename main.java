@@ -18,6 +18,8 @@ public class main {
 		tree.insert(25);
 		tree.insert(35);
 		tree.insert(45);
+		tree.insert(67);
+		tree.insert(75);
         
         tree.printTree();
 	}
