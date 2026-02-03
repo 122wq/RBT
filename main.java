@@ -30,5 +30,11 @@ public class main {
 		tree.root.left.right.color = false;
 		System.out.println(tree.isRedBlack());
 		tree.root.left.right.color = true;
+		//root is red
+		tree.root.color = false;
+		System.out.println(tree.isRedBlack());
+		tree.root.color = true;
+		System.out.println(tree.isRedBlack());
+		
 	}
 }
