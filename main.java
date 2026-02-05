@@ -35,6 +35,10 @@ public class main {
 		System.out.println(tree.isRedBlack());
 		tree.root.color = true;
 		System.out.println(tree.isRedBlack());
+		//Case where 
+		tree.root.right.right.left.color = true;
+		tree.printTree();
+		System.out.println(tree.isRedBlack());
 		
 	}
 }
